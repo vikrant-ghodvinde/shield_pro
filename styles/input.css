@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #111827;
+  color: #9CA3AF;
+  font-family: "Karla", sans-serif;
+}
+
+.header {
+  @apply relative w-full h-full bg-[url('../assets/images/cyber-security-banner.jpg')] bg-cover before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-light-dark-gradient text-white;
+}
+
+.menu-wrapper {
+  @apply fixed left-0 top-0 lg:relative invisible lg:visible lg:top-auto lg:left-auto block lg:flex lg:items-center lg:gap-5 z-50;
+}
+
+.menu-wrapper.active {
+  @apply visible lg:visible;
+}
+
+.menu-wrapper .menu-backdrop {
+  @apply w-full h-full lg:w-auto lg:h-auto bg-black invisible lg:visible opacity-0 fixed left-0 top-0 lg:relative lg:top-auto lg:left-auto -z-10 transition-all duration-300;
+}
+
+.menu-wrapper.active .menu-backdrop {
+  @apply visible opacity-50 lg:visible;
+}
+
+.menu-wrapper .menus {
+  @apply w-60 py-10 lg:py-0 h-full min-h-lvh lg:w-auto lg:h-auto lg:min-h-full flex items-start lg:items-center flex-col fixed left-[-100vh] top-0 lg:relative lg:top-auto lg:left-auto lg:flex-row bg-white lg:bg-transparent z-50 transition-all duration-300 lg:transition-none;
+}
+
+.menu-wrapper.active .menus {
+  @apply left-0 lg:left-auto;
+}
+
+.menu-wrapper .menus .menu-item {
+  @apply relative w-full lg:w-auto;
+}
+
+.menu-wrapper .menus .menu-item .menu-link {
+  @apply relative block py-2.5 lg:py-8 px-2 lg:px-5 font-semibold text-black lg:text-white hover:bg-secondary hover:text-white lg:hover:bg-transparent lg:hover:text-primary transition-colors duration-300;
+}
+
+/* BUTTONS START */
+.button {
+  @apply relative py-2.5 px-6 uppercase tracking-wider text-sm rounded-md transition-colors duration-300;
+}
+
+.button.button-lg {
+  @apply relative py-4 px-8;
+}
+
+.button.button-primary {
+  @apply bg-secondary hover:bg-primary;
+}
+/* BUTTONS END */
+
+/* EXTENDS */
+.margin-block-start {
+  margin-block-start: -2rem;
+}
+
+/* COLORS */
+/* #6366F1 */
+/* #2962EB */
